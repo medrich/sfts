@@ -32,21 +32,21 @@ def make_artist_vector(genres, artists, seed_artist):
     '''
     
     arr = np.zeros(len(genres), dtype=bool)
-    
-    if seed_artist in artists:
-        styles = artists[seed_artist]
-        style_pos = []
+    try:
+        if seed_artist in artists:
+            styles = artists[seed_artist]
+            style_pos = []
         
-        for idx,genre in enumerate(genres):
-            if genre in styles:
-                pos = idx
-                style_pos.append(pos)
+            for idx,genre in enumerate(genres):
+                if genre in styles:
+                    pos = idx
+                    style_pos.append(pos)
         
-        np.put(arr, style_pos, 1)
-        return arr, seed_artist
+            np.put(arr, style_pos, 1)
+            return arr, seed_artist
     
-    else:
-        lit.write('Sorry, that artist does not exist in this dataset.')
+    except:
+        lit.write('Oops, this is embarrassing but we have not heard of them.')
 
 def compare_artist(genres, artists_dict, seed, seed_arr):
     

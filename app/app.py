@@ -106,7 +106,7 @@ lit.write(f"{user_band} are known for playing these styles:")
 for genre in artists[user_band]:
     lit.write(genre)
 
-lit.write(f"Comparing {user_band} to {len(artists_clean)} different artists (representing {len(genres_clean)}) in our database. Let's see what we can find!")
+lit.write(f"Comparing {user_band} to {len(artists_clean)} different artists (representing {len(genres_clean)} genres) in our database. Let's see what we can find!")
 
 similar_artists = compare_artist(genres_clean, artists, user_band, user_band_arr)
 

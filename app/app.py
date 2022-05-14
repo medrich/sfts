@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
-import plotly.express as px
+#import plotly.express as px
 
 with open('/home/mattiboi/Desktop/Data Science/Metis/Engineering/project/data/artists.p', 'rb') as fp:
     artists = pickle.load(fp)

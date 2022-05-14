@@ -9,16 +9,16 @@ import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 #import plotly.express as px
 
-with open('/home/mattiboi/Desktop/Data Science/Metis/Engineering/project/sfts/data/artists.p', 'rb') as fp:
+with open('data/artists.p', 'rb') as fp:
     artists = pickle.load(fp)
     
-with open('/home/mattiboi/Desktop/Data Science/Metis/Engineering/sfts/project/data/genres.p', 'rb') as fp:
+with open('data/genres.p', 'rb') as fp:
     genres = pickle.load(fp)
 
-with open('/home/mattiboi/Desktop/Data Science/Metis/Engineering/sfts/project/data/genres_clean.p', 'rb') as fp:
+with open('data/genres_clean.p', 'rb') as fp:
     genres_clean = pickle.load(fp)
     
-with open('/home/mattiboi/Desktop/Data Science/Metis/Engineering/sfts/project/data/artists_clean.p', 'rb') as fp:
+with open('data/artists_clean.p', 'rb') as fp:
     artists_clean = pickle.load(fp)
 
 lit.set_page_config(page_title='Searching For The Sound', layout='wide')

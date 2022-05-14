@@ -101,7 +101,12 @@ seed_artist = lit.text_input('Who do you want to find similar bands for?')
 step1 = make_artist_vector(genres_clean, artists, seed_artist=seed_artist)
 user_band = step1[1]
 user_band_arr = step1[0]
-lit.write(f"You entered {user_band}. Let's see what we can find!")
+
+lit.write(f"{user_band} are known for playing these styles:")
+for genre in artist[user_band]:
+    lit.write(genre)
+
+lit.write(f"Comparing {user_band} to {len(artists_clean)} different artists (representing {len(genres_clean)}) in our database. Let's see what we can find!")
 
 similar_artists = compare_artist(genres_clean, artists, user_band, user_band_arr)
 

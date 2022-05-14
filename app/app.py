@@ -48,8 +48,8 @@ def make_artist_vector(genres, artists, seed_artist):
             return arr, seed_artist
         else:
             lit.write('Oops, this is embarrassing but we have not heard of them. Are you sure you spelled that right?')
-    except:
-        lit.write('Feel free to try again!')
+    except TypeError:
+        lit.error('Feel free to try again!')
 
 def compare_artist(genres, artists_dict, seed, seed_arr):
     

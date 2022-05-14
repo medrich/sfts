@@ -7,6 +7,8 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
+import warnings
+warnings.filterwarnings('ignore')
 #import plotly.express as px
 
 with open('data/artists.p', 'rb') as fp:
@@ -44,9 +46,10 @@ def make_artist_vector(genres, artists, seed_artist):
         
             np.put(arr, style_pos, 1)
             return arr, seed_artist
-    
+        else:
+            lit.write('Oops, this is embarrassing but we have not heard of them. Are you sure you spelled that right?')
     except:
-        lit.write('Oops, this is embarrassing but we have not heard of them.')
+        lit.write('Feel free to try again!')
 
 def compare_artist(genres, artists_dict, seed, seed_arr):
     
